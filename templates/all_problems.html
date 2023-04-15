@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %} {% block content %}{% for i in problems %}
 
 <section class="section-one">
   <div class="section-text">
@@ -37,7 +37,6 @@
   </a>
 </div>
 
-{% for i in problems %}
 <a href="{% url 'problem' i.id %}">
   <div class="problem">
     <h1>HELLO</h1>
