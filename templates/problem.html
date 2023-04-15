@@ -3,9 +3,7 @@
 <section class="section-one">
   <div class="section-text">
     <div class="title">{{problem.name}}</div>
-    <div class="lvltxt" style="font-size: 1.5rem">
-      {{problem.question_text}}
-    </div>
+    <div class="lvltxt" style="font-size: 2rem">{{problem.question_text}}</div>
     <form method="POST">
       {% csrf_token %}
       <input
