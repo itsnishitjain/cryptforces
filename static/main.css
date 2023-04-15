@@ -631,7 +631,7 @@ input:where([type="text"], [type="email"], ) {
   text-decoration: none;
 }
 .card:hover {
-  background-color: var(--clr-accent-400);
+  background-color: var(--clr-accent-300);
 }
 
 .card h2 {
@@ -640,17 +640,16 @@ input:where([type="text"], [type="email"], ) {
   font-size: 1.5rem;
   margin-bottom: 4vh;
   padding: 0 1vw;
+  color: var(--clr-primary-400);
 }
 
 .section-one {
-  margin-top: 5rem;
   width: 100%;
   padding-top: 10vh;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  margin-bottom: 7.7vh;
 }
 
 .section-text {
