@@ -20,3 +20,7 @@ def check_answer(request, problem_id):
         return HttpResponse("Correct answer")
     else:
         return HttpResponse("Wrong answer")
+
+def all_problems(request):
+    problems = Question.objects.all()
+    return render(request, 'all_problems.html', {'problems': problems})
