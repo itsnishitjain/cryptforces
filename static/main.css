@@ -685,3 +685,36 @@ input:where([type="text"], [type="email"], ) {
     display: inline-flex;
   }
 }
+
+.cards {
+  padding: 8.5% 25%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+
+.card {
+  width: 100%;
+  height: 28vh;
+  padding: 5vh 0;
+  background-color: rgb(47, 47, 47);
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease 0s;
+}
+.card:hover {
+  background-color: rgb(255, 104, 104);
+}
+
+.card h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 4vh;
+  padding: 0 1vw;
+}
