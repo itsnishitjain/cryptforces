@@ -609,7 +609,7 @@ input:where([type="text"], [type="email"], ) {
 }
 
 .section-one {
-  margin: 9rem 0;
+  margin: 4rem 0;
   height: 60vh;
   display: flex;
   justify-content: space-around;
@@ -619,12 +619,12 @@ input:where([type="text"], [type="email"], ) {
 
 .section-one .section-text {
   text-align: center;
-  color: white;
+  color: var(--clr-primary-400);
 }
 
 .section-text .title {
-  font-family: "Montserrat", sans-serif;
-  color: rgb(255, 104, 104);
+  font-family: var(--ff-heading);
+  color: var(--clr-accent-500);
   font-weight: 700;
   font-size: 5em;
   line-height: 120%;
@@ -632,7 +632,7 @@ input:where([type="text"], [type="email"], ) {
 }
 
 .section-text .lvltxt {
-  font-family: "Montserrat", sans-serif;
+  font-family: var(--ff-heading);
   color: white;
   font-weight: 400;
   line-height: 120%;
@@ -659,9 +659,27 @@ input:where([type="text"], [type="email"], ) {
 }
 
 input:hover {
-  border-color: white;
+  border-color: var(--clr-primary-400);
 }
 
 input:focus {
-  border-color: white;
+  border-color: var(--clr-primary-400);
+}
+
+.submit-btn {
+  padding: 0.95rem;
+  margin-left: 20px;
+  font-family: inherit;
+  font-weight: inherit;
+  color: inherit;
+  outline: none;
+  background-color: transparent;
+  border: 2px solid var(--clr-accent-500);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+.submit-btn:hover {
+  background: var(--clr-accent-500);
 }
