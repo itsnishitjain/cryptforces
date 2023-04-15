@@ -1,4 +1,4 @@
-{% extends "base.html" %} {% block content %} {% for i in problems %}
+{% extends "base.html" %} {% block content %}
 
 <section class="section-one">
   <div class="section-text">
@@ -14,29 +14,30 @@
 </section>
 
 <div class="cards">
-  <a class="card" href="https://cryptforces.vercel.app/problems/1">
+  <a class="card" href="{% url 'problem' i.id %}">
     <h2 class="fs-600 fw-bold">{{i.name}}</h2>
   </a>
-  <a class="card" href="https://cryptforces.vercel.app/problems/1">
+  <a class="card" href="{% url 'problem' i.id %}">
     <h2 class="fs-600 fw-bold">{{i.name}}</h2>
   </a>
-  <a class="card" href="https://cryptforces.vercel.app/problems/1">
+  <a class="card" href="{% url 'problem' i.id %}">
     <h2 class="fs-600 fw-bold">{{i.name}}</h2>
   </a>
-  <a class="card" href="https://cryptforces.vercel.app/problems/1">
+  <a class="card" href="{% url 'problem' i.id %}">
     <h2 class="fs-600 fw-bold">{{i.name}}</h2>
   </a>
-  <a class="card" href="https://cryptforces.vercel.app/problems/1">
+  <a class="card" href="{% url 'problem' i.id %}">
     <h2 class="fs-600 fw-bold">{{i.name}}</h2>
   </a>
-  <a class="card" href="https://cryptforces.vercel.app/problems/1">
+  <a class="card" href="{% url 'problem' i.id %}">
     <h2 class="fs-600 fw-bold">L{{i.name}}</h2>
   </a>
-  <a class="card" href="https://cryptforces.vercel.app/problems/1">
+  <a class="card" href="{% url 'problem' i.id %}">
     <h2 class="fs-600 fw-bold">{{i.name}}</h2>
   </a>
 </div>
 
+{% for i in problems %}
 <a href="{% url 'problem' i.id %}">
   <div class="problem">
     <h1>HELLO</h1>

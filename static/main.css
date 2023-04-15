@@ -631,7 +631,7 @@ input:where([type="text"], [type="email"], ) {
   text-decoration: none;
 }
 .card:hover {
-  background-color: var(--clr-accent-300);
+  background-color: var(--clr-accent-100);
 }
 
 .card h2 {
