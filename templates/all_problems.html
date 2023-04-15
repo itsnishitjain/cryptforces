@@ -1,5 +1,4 @@
-{% extends "base.html" %} {% block content %}{% for i in problems %} {% load
-static %}
+{% extends "base.html" %} {% block content %} {% load static %}
 <link rel="stylesheet" type="text/css" href="{% static 'all_problems.css' %}" />
 
 <section class="section-one">
@@ -14,6 +13,8 @@ static %}
     </div>
   </div>
 </section>
+
+{% for i in problems %}
 
 <div class="cards">
   <a class="card" href="{% url 'problem' i.id %}">
