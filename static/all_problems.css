@@ -607,3 +607,78 @@ input:where([type="text"], [type="email"], ) {
     display: inline-flex;
   }
 }
+
+.cards {
+  padding: 8.5% 25%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 3rem;
+}
+
+.card {
+  width: 100%;
+  height: 28vh;
+  padding: 5vh 0;
+  background-color: var(--clr-neutral-200);
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  transition: all 0.3s ease 0s;
+  text-decoration: none;
+}
+.card:hover {
+  background-color: var(--clr-accent-100);
+}
+
+.card h2 {
+  font-family: var(--ff-heading);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 4vh;
+  padding: 0 1vw;
+  color: var(--clr-primary-400);
+}
+
+.section-one {
+  width: 100%;
+  padding-top: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.section-text {
+  font-family: var(--ff-heading);
+  color: var(--clr-primary-400);
+  flex-direction: column;
+  text-align: center;
+  font-weight: 1000;
+  width: 50%;
+}
+
+.section-text .section-title {
+  font-family: var(--ff-heading);
+  line-height: 100%;
+  margin-bottom: 20px;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+@media only screen and (max-width: 680px) {
+  .section-text .section-title {
+    font-size: 2.5rem;
+  }
+}
+
+.small-span {
+  padding-top: 3vh;
+  letter-spacing: 0.5px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 3vh;
+}

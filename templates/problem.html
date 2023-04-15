@@ -1,11 +1,25 @@
-{% extends "base.html" %} {% block content %}
-<h1>{{problem.name}}</h1>
-<h2>{{problem.question_text}}</h2>
-<h3>{{problem.category}}</h3>
-<form method="POST">
-  {% csrf_token %}
-  <input type="text" name="answer" id="answer" />
-  <input type="submit" value="Submit" />
-</form>
+{% load static %}{% extends "base.html" %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'problem.css' %}" />
+<section class="section-one">
+  <div class="section-text">
+    <div class="title">{{problem.name}}</div>
+    <div class="lvltxt" style="font-size: 1.5rem">
+      {{problem.question_text}}
+    </div>
+    <form method="POST">
+      {% csrf_token %}
+      <input
+        style="color: white; width: 20rem"
+        class="form-input"
+        placeholder="Answer"
+        type="text"
+        name="answer"
+        id="answer"
+        autocomplete="off"
+      />
+      <input type="submit" value="Submit" />
+    </form>
+  </div>
+</section>
 <script src="" async defer></script>
 {% endblock content %}

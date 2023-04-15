@@ -1,4 +1,6 @@
-{% extends "base.html" %} {% block content %}{% for i in problems %}
+{% load static %}{% extends "base.html" %} {% block content %}{% for i in
+problems %}
+<link rel="stylesheet" type="text/css" href="{% static 'all_problems.css' %}" />
 
 <section class="section-one">
   <div class="section-text">
@@ -30,7 +32,7 @@
     <h2 class="fs-600 fw-bold">{{i.name}}</h2>
   </a>
   <a class="card" href="{% url 'problem' i.id %}">
-    <h2 class="fs-600 fw-bold">L{{i.name}}</h2>
+    <h2 class="fs-600 fw-bold">{{i.name}}</h2>
   </a>
   <a class="card" href="{% url 'problem' i.id %}">
     <h2 class="fs-600 fw-bold">{{i.name}}</h2>
