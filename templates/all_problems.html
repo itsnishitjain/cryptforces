@@ -1,23 +1,29 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        {% for i in problems %}
-            <a href="{% url 'problem' i.id %}">
-                <div class="problem">
-                    <h2>{{i.name}}</h2>
-                    <p>{{i.question_text}}</p>
-                </div>
-            </a>
-        {% endfor %}
-        
-        <script src="" async defer></script>
-    </body>
-</html>
+{% extends "base.html" %} {% block content %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'all_problems.css' %}" />
+
+<section class="section-one">
+  <div class="section-text">
+    <div class="section-title">Problemset</div>
+    <div class="small-span">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus nemo
+      quisquam saepe, praesentium veniam alias. Officiis, rem? Dolor hic
+      repudiandae nisi iusto, nihil labore molestiae! Sint aperiam, eligendi,
+      quia maiores similique harum voluptatem tempore nesciunt earum eveniet,
+      eaque accusamus illum.
+    </div>
+  </div>
+</section>
+
+{% for i in problems %}
+
+<div class="cards">
+  <a class="card" href="{% url 'problem' i.id %}">
+    <h2 class="fs-600 fw-bold">{{i.name}}</h2>
+  </a>
+</div>
+
+{% endfor %}
+
+<script src="" async defer></script>
+{% endblock content %}
+

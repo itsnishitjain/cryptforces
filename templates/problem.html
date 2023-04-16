@@ -1,26 +1,23 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        <h1>{{problem.name}}</h1>
-        <h2>{{problem.question_text}}</h2> 
-        <h3>{{problem.category}}</h3>       
-        <form method="POST">
-            {% csrf_token %}
-            <input type="text" name="answer" id="answer">
-            <input type="submit" value="Submit">
-        </form>
-        <script src="" async defer></script>
-    </body>
-</html>
+{% extends "base.html" %} {% block content %} {% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'problem.css' %}" />
+<section class="section-one">
+  <div class="section-text">
+    <div class="title">{{problem.name}}</div>
+    <div class="lvltxt" style="font-size: 2rem">{{problem.question_text}}</div>
+    <form method="POST">
+      {% csrf_token %}
+      <input
+        style="color: black; width: 20rem"
+        class="form-input"
+        placeholder="Answer"
+        type="text"
+        name="answer"
+        id="answer"
+        autocomplete="off"
+      />
+      <input class="submit-btn" type="submit" value="Submit" />
+    </form>
+  </div>
+</section>
+<script src="" async defer></script>
+{% endblock content %}
