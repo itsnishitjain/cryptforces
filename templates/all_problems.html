@@ -14,16 +14,13 @@
   </div>
 </section>
 
-{% for i in problems %}
-
 <div class="cards">
+  {% for i in problems %}
   <a class="card" href="{% url 'problem' i.id %}">
     <h2 class="fs-600 fw-bold">{{i.name}}</h2>
   </a>
+  {% endfor %}
 </div>
-
-{% endfor %}
 
 <script src="" async defer></script>
 {% endblock content %}
-
