@@ -632,8 +632,6 @@ input:where([type="text"], [type="email"], ) {
 }
 .card:hover {
   background-color: var(--clr-accent-100);
-  scale: 1.2;
-  transform: scale(1.2);
 }
 
 .card h2 {
