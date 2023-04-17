@@ -19,5 +19,25 @@
     </form>
   </div>
 </section>
-<script src="" async defer></script>
+<div class="toast toast-center bottom-72 transition-all ease-in-out">
+  {% if toast == 'Correct' %}
+  <div class="alert alert-success">
+    <div>
+      <span>Correct</span>
+    </div>
+  </div>
+  {% elif toast == 'Incorrect' %}
+  <div class="alert alert-error">
+    <div>
+      <span>Incorrect</span>
+    </div>
+  </div>
+  {% endif %}
+</div>
+<script>
+  const toast = document.querySelector(".toast");
+  setTimeout(() => {
+    toast.classList.add("hidden");
+  }, 2000);
+</script>
 {% endblock content %}

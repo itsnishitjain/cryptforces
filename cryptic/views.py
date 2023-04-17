@@ -7,19 +7,12 @@ def problem(request, problem_id):
         problem = Question.objects.get(id=problem_id)
         answer = request.POST['answer']
         if problem.answer == answer:
-            return HttpResponse("Correct answer")
+            return render(request, 'problem.html', {'problem': problem, 'toast': "Correct"})
         else:
-            return HttpResponse("Wrong answer")
+            return render(request, 'problem.html', {'problem': problem, 'toast': "Incorrect"})
     problem = Question.objects.get(id=problem_id)
     return render(request, 'problem.html', {'problem': problem})
 
-def check_answer(request, problem_id):
-    problem = Question.objects.get(id=problem_id)
-    answer = request.POST['answer']
-    if problem.answer == answer:
-        return HttpResponse("Correct answer")
-    else:
-        return HttpResponse("Wrong answer")
 
 def all_problems(request):
     problems = Question.objects.all()
