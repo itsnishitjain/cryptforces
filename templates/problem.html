@@ -20,7 +20,7 @@
         <div class="toast toast-center bottom-72 transition-all ease-in-out">
           {% if toast == 'Correct' %}
           <div id="snackbar">Correct</div>
-        
+
           {% elif toast == 'Incorrect' %}
           <div id="snackbar">Incorrect</div>
           {% endif %}
@@ -33,6 +33,8 @@
 <script>
   var x = document.getElementById("snackbar");
   x.className = "show";
-  setTimeout(function(){ x.remove(); }, 2000);
+  setTimeout(function () {
+    x.remove();
+  }, 2000);
 </script>
 {% endblock content %}

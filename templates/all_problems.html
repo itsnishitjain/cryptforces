@@ -15,15 +15,14 @@
 </section>
 
 <div class="cards bg-white">
-{% for i in problems %}
+  {% for i in problems %}
 
   <a class="card" href="{% url 'problem' i.id %}">
     <h2 class="fs-600 fw-bold">{{i.name}}</h2>
   </a>
 
-{% endfor %}
+  {% endfor %}
 </div>
 
 <script src="" async defer></script>
 {% endblock content %}
-
