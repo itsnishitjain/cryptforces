@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'django.contrib.staticfiles',
     'cryptic',
+    "allauth_ui",
+    "widget_tweaks",
     'allauth',
     'allauth.account',
     'allauth.socialaccount',

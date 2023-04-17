@@ -109,9 +109,32 @@
               <li><a href="#">Compete</a></li>
             </ul>
           </nav>
-          <button class="button | display-sm-none display-md-inline-flex">
-            Get Started
-          </button>
+          {% if user.is_authenticated %}
+          <div class="primary-navigation-user">
+            <a href="/profile" class="primary-navigation-user-link">
+              <img
+                src="https://www.gravatar.com/avatar/{{ user.email }}?s=20"
+                alt=""
+                class="primary-navigation-user-avatar"
+              />
+              <span class="primary-navigation-user-name">{{ user.username }}</span>
+            </a>
+            <a href="/logout" class="primary-navigation-user-logout">
+              <img
+                src="images/icon-logout.svg"
+                alt=""
+                class="primary-navigation-user-logout-icon"
+              />
+              <span class="primary-navigation-user-logout-text">Logout</span>
+            </a>
+          </div>
+          {% else %}
+          <a href="/accounts/signup">
+            <button class="button | display-sm-none display-md-inline-flex">
+              Get Started
+            </button>
+          </a>
+          {% endif %}
         </div>
       </div>
     </header>

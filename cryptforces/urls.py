@@ -23,5 +23,4 @@ urlpatterns = [
     path('problem/<int:problem_id>', problem, name='problem'),
     path('problems', all_problems, name='all_problems'),
     path('accounts/', include('allauth.urls')),
-
 ]

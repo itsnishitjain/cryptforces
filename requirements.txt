@@ -2,3 +2,5 @@ Django==4.1.0
 psycopg2-binary==2.9.6
 python-dotenv==1.0.0
 django-allauth==0.54.0
+django-allauth-ui==0.1.4
+django-widget-tweaks==1.4.12

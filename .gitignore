@@ -6,6 +6,7 @@
 
 # C extensions
 *.so
+staticfiles_build/
 
 # Distribution / packaging
 .Python
