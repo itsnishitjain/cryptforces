@@ -16,28 +16,23 @@
         autocomplete="off"
       />
       <input class="submit-btn" type="submit" value="Submit" />
+      <center>
+        <div class="toast toast-center bottom-72 transition-all ease-in-out">
+          {% if toast == 'Correct' %}
+          <div id="snackbar">Correct</div>
+        
+          {% elif toast == 'Incorrect' %}
+          <div id="snackbar">Incorrect</div>
+          {% endif %}
+        </div>
+      </center>
     </form>
   </div>
 </section>
-<div class="toast toast-center bottom-72 transition-all ease-in-out">
-  {% if toast == 'Correct' %}
-  <div class="alert alert-success">
-    <div>
-      <span>Correct</span>
-    </div>
-  </div>
-  {% elif toast == 'Incorrect' %}
-  <div class="alert alert-error">
-    <div>
-      <span>Incorrect</span>
-    </div>
-  </div>
-  {% endif %}
-</div>
+
 <script>
-  const toast = document.querySelector(".toast");
-  setTimeout(() => {
-    toast.classList.add("hidden");
-  }, 2000);
+  var x = document.getElementById("snackbar");
+  x.className = "show";
+  setTimeout(function(){ x.remove(); }, 2000);
 </script>
 {% endblock content %}
