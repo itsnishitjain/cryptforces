@@ -19,6 +19,9 @@ class Question(models.Model):
     difficulty = models.IntegerField(default=0)
     category = models.CharField(max_length=200, default="General")
     tags = models.ManyToManyField(Tag, blank=True)
+    from_event = models.BooleanField(default=False)
+    event_name = models.CharField(max_length=200, blank=True, null=True)
+    event_url = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.question_text
