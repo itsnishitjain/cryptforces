@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include 
-from .views import index
+from .views import index, leaderboard, profile
 from cryptic.views import problem, all_problems
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,4 +23,6 @@ urlpatterns = [
     path('problem/<int:problem_id>', problem, name='problem'),
     path('problems', all_problems, name='all_problems'),
     path('accounts/', include('allauth.urls')),
+    path('leaderboard', leaderboard, name='leaderboard'),
+    path('profile', profile, name='profile'),
 ]
