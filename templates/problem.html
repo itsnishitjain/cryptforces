@@ -112,15 +112,17 @@
         <div class="flex flex-row stats shadow" style="overflow: hidden">
           <div class="stat">
             <div class="stat-title">Points</div>
-            <div class="stat-value">89,400</div>
+            <div class="stat-value">{{problem.points}}</div>
           </div>
           <div class="stat">
             <div class="stat-title">difficulty</div>
-            <div class="stat-value">Easy</div>
+            <div class="stat-value">{{problem.difficulty}}</div>
           </div>
           <div class="stat">
-            <div class="stat-title">Category</div>
-            <div class="stat-value">Steganography</div>
+            <div class="stat-title">Tags</div>
+            {% for j in problem.tags.all %}
+            <div class="stat-value">{{j.name}}</div>
+            {% endfor %}
           </div>
         </div>
       </div>
