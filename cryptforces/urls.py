@@ -25,4 +25,5 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('leaderboard', leaderboard, name='leaderboard'),
     path('profile', profile, name='profile'),
+    path('accounts/profile/', profile)
 ]
