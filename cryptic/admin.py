@@ -9,5 +9,10 @@ class QuestionAdmin(admin.ModelAdmin):
 class TagAdmin(admin.ModelAdmin):
     list_display = ('name',)
 
+class LogsAdmin(admin.ModelAdmin):
+    list_display = ('user', 'time', 'attempt')
+
+
 admin.site.register(Question, QuestionAdmin)
 admin.site.register(Tag, TagAdmin)
+admin.site.register(logs, LogsAdmin)

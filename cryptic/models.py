@@ -32,3 +32,14 @@ class Additional_Hints(models.Model):
 
     def __str__(self):
         return self.hint_text
+
+
+class logs(models.Model):
+    user = models.CharField(max_length=200)
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    time = models.DateTimeField(auto_now_add=True)
+    attempt = models.CharField(max_length=200)
+    
+
+    def __str__(self):
+        return self.user
