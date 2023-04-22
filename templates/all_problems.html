@@ -1,24 +1,39 @@
 {% extends "base.html" %} {% block content %} {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'all_problems.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
 
-<section class="section-one">
-  <div class="section-text">
-    <div class="section-title">Problemset</div>
-    <div class="small-span">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus nemo
-      quisquam saepe, praesentium veniam alias. Officiis, rem? Dolor hic
-      repudiandae nisi iusto, nihil labore molestiae! Sint aperiam, eligendi,
-      quia maiores similique harum voluptatem tempore nesciunt earum eveniet,
-      eaque accusamus illum.
+<div class="hero py-20 bg-base-100">
+  <div class="hero-content text-center">
+    <div class="max-w-md">
+      <h1 class="text-5xl font-bold">Problemset</h1>
+      <p class="py-6">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus nemo
+        quisquam saepe, praesentium veniam alias. Officiis, rem? Dolor hic
+        repudiandae nisi iusto, nihil labore molestiae! Sint aperiam, eligendi,
+        quia maiores similique harum voluptatem tempore nesciunt earum eveniet,
+        eaque accusamus illum.
+      </p>
     </div>
   </div>
-</section>
+</div>
 
-<div class="cards bg-white">
+<div
+  class="grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))] gap-12 px-[25%] pb-[7.5%]"
+>
   {% for i in problems %}
 
-  <a class="card" href="{% url 'problem' i.id %}">
-    <h2 class="fs-600 fw-bold">{{i.name}}</h2>
+  <a href="{% url 'problem' i.id %}">
+    <div
+      class="card w-100 h-52 bg-base-100 shadow-xl shadow-black/60 border-white-200"
+    >
+      <div class="card-body">
+        <h2 class="card-title">{{i.name}}</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <div class="card-actions justify-end">
+          <div class="badge badge-outline">Easy</div>
+          <div class="badge badge-outline">Steganography</div>
+        </div>
+      </div>
+    </div>
   </a>
 
   {% endfor %}

@@ -12,16 +12,13 @@
       href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-
-    {% comment %}
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@2.51.5/dist/full.css"
       rel="stylesheet"
       type="text/css"
     />
-    {% endcomment %} {% comment %}
     <script src="https://cdn.tailwindcss.com"></script>
-    {% endcomment %}
+
     <script>
       const primaryHeader = document.querySelector(".primary-header");
       const navToggle = document.querySelector(".mobile-nav-toggle");
@@ -37,16 +34,16 @@
     </script>
   </head>
 
-  <body class="bg-white">
-    <header class="primary-header">
-      <div class="container">
-        <div class="nav-wrapper">
-          <a href="#" aria-label="home">
+  <body style="font-family: 'Be Vietnam Pro', sans-serif">
+    <!-- <header>
+      <div>
+        <div>
+          <a href="#">
             <svg
-              width="200"
-              height="50"
+              class="py-14"
+              width="950"
+              height="145"
               viewBox="0 0 370.1851851851852 63.80911108803392"
-              class="css-1j8o68f"
             >
               <defs id="SvgjsDefs2365"></defs>
               <g
@@ -82,175 +79,215 @@
               </g>
             </svg>
           </a>
-          <button
-            class="mobile-nav-toggle"
-            aria-controls="primary-navigation"
-            aria-expanded="false"
-          >
-            <img
-              class="icon-hamburger"
-              src="images/icon-hamburger.svg"
-              alt=""
-              aria-hidden="true"
-            />
-            <img
-              class="icon-close"
-              src="images/icon-close.svg"
-              alt=""
-              aria-hidden="true"
-            />
-            <span class="visually-hidden">Menu</span>
+          <button>
+            <img src="images/icon-hamburger.svg" alt="" />
+            <img src="images/icon-close.svg" alt="" />
           </button>
           <nav class="primary-navigation" id="primary-navigation">
-            <ul aria-label="Primary" role="list" class="nav-list">
+            <ul>
               <li><a href="#">Explore</a></li>
               <li><a href="/problems">Problemset</a></li>
               <li><a href="#">Forum</a></li>
               <li><a href="#">Compete</a></li>
             </ul>
           </nav>
-          {% if user.is_authenticated %}
-          <div class="primary-navigation-user">
-            <a href="/profile" class="primary-navigation-user-link">
-              <img
-                src="https://source.boringavatars.com/beam/60/{{ user.username }}"
-                alt=""
-                class="primary-navigation-user-avatar"
-              />
-              <span class="primary-navigation-user-name">{{ user.username }}</span>
-            </a>
-            <a href="/logout" class="primary-navigation-user-logout">
-              <img
-                src="images/icon-logout.svg"
-                alt=""
-                class="primary-navigation-user-logout-icon"
-              />
-              <span class="primary-navigation-user-logout-text">Logout</span>
-            </a>
-          </div>
-          {% else %}
-          <a href="/accounts/signup">
-            <button class="button | display-sm-none display-md-inline-flex">
-              Get Started
-            </button>
-          </a>
-          {% endif %}
+          <button>Get Started</button>
         </div>
       </div>
-    </header>
+    </header> -->
+
+    <div class="navbar bg-base-200">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <label tabindex="0" class="btn btn-ghost lg:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-5 w-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h8m-8 6h16"
+              />
+            </svg>
+          </label>
+          <ul
+            tabindex="0"
+            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li><a href="#">Resources</a></li>
+            <li><a href="/problems">Problemset</a></li>
+            <li><a href="#">Forum</a></li>
+            <li><a href="#">Compete</a></li>
+          </ul>
+        </div>
+
+        <div class="w-10">
+          <svg
+            width="200"
+            height="50"
+            viewBox="0 0 370.1851851851852 63.80911108803392"
+          >
+            <defs id="SvgjsDefs2365"></defs>
+            <g
+              id="SvgjsG2366"
+              featurekey="symbolFeature-0"
+              transform="matrix(21.398091441995412,0,0,21.398091441995412,-21.077120376467633,-21.590673060971568)"
+              fill="#3FC1C9"
+            >
+              <g xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <polygon
+                    fill="#3FC1C9"
+                    points="2.179,1.009 0.989,2.171 1.872,3.302 2.465,3.292 3.062,2.759 2.767,2.428 2.292,2.852     2.085,2.856 1.583,2.211 2.358,1.453 3.225,1.453 4.014,2.49 4.014,1.759 3.443,1.009   "
+                  ></polygon>
+                </g>
+                <g>
+                  <polygon
+                    fill="#3FC1C9"
+                    points="2.544,1.708 1.947,2.242 2.242,2.571 2.717,2.148 2.923,2.145 3.426,2.79 2.649,3.547     1.784,3.547 0.985,2.499 0.985,3.23 1.565,3.991 2.83,3.991 4.014,2.833 4.014,2.824 3.137,1.697   "
+                  ></polygon>
+                </g>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <a class="normal-case text-xl">cryptforces</a>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1">
+          <li><a href="#">Resources</a></li>
+          <li><a href="/problems">Problemset</a></li>
+          <li><a href="#">Forum</a></li>
+          <li><a href="#">Compete</a></li>
+        </ul>
+      </div>
+      <div class="navbar-end">
+        <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+            <div class="w-10 rounded-full">
+              <img src="https://source.boringavatars.com/beam/60/nishit" />
+            </div>
+          </label>
+          <ul
+            tabindex="0"
+            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a class="justify-between">
+                Profile
+                <span class="badge">New</span>
+              </a>
+            </li>
+            <li><a>Settings</a></li>
+            <li><a>Logout</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
     {% block content %}{% endblock %}
 
+    <footer class="footer p-10 bg-base-200 text-base-content">
+      <div>
+        <span class="footer-title">Services</span>
+        <a class="link link-hover">Branding</a>
+        <a class="link link-hover">Design</a>
+        <a class="link link-hover">Marketing</a>
+        <a class="link link-hover">Advertisement</a>
+      </div>
+      <div>
+        <span class="footer-title">Company</span>
+        <a class="link link-hover">About us</a>
+        <a class="link link-hover">Contact</a>
+        <a class="link link-hover">Jobs</a>
+        <a class="link link-hover">Press kit</a>
+      </div>
+      <div>
+        <span class="footer-title">Legal</span>
+        <a class="link link-hover">Terms of use</a>
+        <a class="link link-hover">Privacy policy</a>
+        <a class="link link-hover">Cookie policy</a>
+      </div>
+    </footer>
     <footer
-      class="primary-footer | padding-block-700 bg-neutral-900 text-neutral-100"
+      class="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300"
     >
-      <div class="container">
-        <div class="primary-footer-wrapper">
-          <div class="primary-footer-logo-social">
-            <a href="/" aria-label="home">
-              <svg
-                width="200"
-                height="50"
-                viewBox="0 0 370.1851851851852 63.80911108803392"
-                class="css-1j8o68f"
-              >
-                <defs id="SvgjsDefs2901"></defs>
-                <g
-                  id="SvgjsG2902"
-                  featurekey="symbolFeature-0"
-                  transform="matrix(21.398091441995412,0,0,21.398091441995412,-21.077120376467633,-21.590673060971568)"
-                  fill="#3FC1C9"
-                >
-                  <g xmlns="http://www.w3.org/2000/svg">
-                    <g>
-                      <polygon
-                        fill="#3FC1C9"
-                        points="2.179,1.009 0.989,2.171 1.872,3.302 2.465,3.292 3.062,2.759 2.767,2.428 2.292,2.852     2.085,2.856 1.583,2.211 2.358,1.453 3.225,1.453 4.014,2.49 4.014,1.759 3.443,1.009   "
-                      ></polygon>
-                    </g>
-                    <g>
-                      <polygon
-                        fill="#3FC1C9"
-                        points="2.544,1.708 1.947,2.242 2.242,2.571 2.717,2.148 2.923,2.145 3.426,2.79 2.649,3.547     1.784,3.547 0.985,2.499 0.985,3.23 1.565,3.991 2.83,3.991 4.014,2.833 4.014,2.824 3.137,1.697   "
-                      ></polygon>
-                    </g>
-                  </g>
+      <div class="items-center grid-flow-col">
+        <div class="w-10">
+          <svg
+            width="200"
+            height="50"
+            viewBox="0 0 370.1851851851852 63.80911108803392"
+          >
+            <defs id="SvgjsDefs2365"></defs>
+            <g
+              id="SvgjsG2366"
+              featurekey="symbolFeature-0"
+              transform="matrix(21.398091441995412,0,0,21.398091441995412,-21.077120376467633,-21.590673060971568)"
+              fill="#3FC1C9"
+            >
+              <g xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <polygon
+                    fill="#3FC1C9"
+                    points="2.179,1.009 0.989,2.171 1.872,3.302 2.465,3.292 3.062,2.759 2.767,2.428 2.292,2.852     2.085,2.856 1.583,2.211 2.358,1.453 3.225,1.453 4.014,2.49 4.014,1.759 3.443,1.009   "
+                  ></polygon>
                 </g>
-                <g
-                  id="SvgjsG2903"
-                  featurekey="nameFeature-0"
-                  transform="matrix(1.356467704842914,0,0,1.356467704842914,82.50551962010393,-8.022087896686516)"
-                  fill="#f5f5f5"
-                >
-                  <path
-                    d="M4.8 29.96 c0 2.8 1.16 5.24 3.36 6.68 c1.12 0.76 2.4 1.12 3.84 1.12 c1.68 0 3.16 -0.56 4.08 -1.24 c0.44 -0.32 0.84 -0.72 1.24 -1.2 c0.72 -0.96 1.04 -1.6 1.32 -2.32 l2.68 0.88 c-0.44 1.56 -1.52 3.08 -3.04 4.32 c-1.52 1.28 -3.84 2.16 -6.32 2.16 c-5.68 0.08 -10.2 -4.36 -10.12 -10.24 c0 -1.96 0.48 -3.72 1.4 -5.32 s2.16 -2.84 3.72 -3.72 s3.24 -1.32 5.12 -1.32 c2.24 0 4.24 0.64 5.92 1.84 c1.72 1.28 2.8 2.76 3.2 4.52 l-2.64 0.88 c-0.44 -1.6 -2.48 -4.64 -6.56 -4.64 c-2.08 0 -3.8 0.72 -5.16 2.2 s-2.04 3.28 -2.04 5.4 z M26.16 20.12 l2.84 0 l0 3.92 c0.96 -1.96 2.56 -3.28 4.08 -3.84 c0.76 -0.28 1.56 -0.4 2.36 -0.4 c0.44 0 0.76 0 0.96 0.08 l0 3.08 c-0.32 -0.08 -0.72 -0.08 -1.12 -0.08 c-4.72 0 -6.2 3.88 -6.2 7.4 l0 9.72 l-2.92 0 l0 -19.88 z M44.879999999999995 49.8 l-3.16 0 l5.16 -11.16 l-9.04 -18.52 l3.32 0 l7.28 15.36 l6.92 -15.36 l3.12 0 z M82.36 30.04 c0 3.6 -1.56 6.84 -4.44 8.8 c-1.44 0.96 -3.08 1.44 -4.92 1.44 c-3.24 0 -5.8 -1.44 -7.64 -4.36 l0 13.88 l-2.92 0 l0 -29.68 l2.84 0 l0 4.32 c2.04 -3.12 4.6 -4.68 7.72 -4.68 c2.76 0 5.24 1.24 6.84 3.2 c1.56 1.92 2.52 4.48 2.52 7.08 z M72.44 37.76 c2.12 0 3.8 -0.76 5.08 -2.2 c1.24 -1.48 1.88 -3.28 1.88 -5.44 c0 -2.8 -1.08 -5.24 -3.24 -6.68 c-1.04 -0.72 -2.32 -1.08 -3.72 -1.08 c-4.04 -0.08 -7.24 3.68 -7.12 7.64 c0 2.08 0.64 3.92 2 5.44 c1.36 1.56 3.04 2.32 5.12 2.32 z M94.43999999999998 40.16 c-4.32 0 -5.64 -2.4 -5.64 -5.32 l0 -12.16 l-3.68 0 l0 -2.56 l3.68 0 l0 -5.72 l2.88 0 l0 5.72 l5.04 0 l0 2.56 l-5.04 0 l0 12.12 c0 1.84 1.08 2.8 3.24 2.8 c0.68 0 1.28 -0.08 1.8 -0.16 l0 2.4 c-0.64 0.2 -1.4 0.32 -2.28 0.32 z M109.32 12.16 c-0.8 0 -1.52 0.24 -2.2 0.8 c-0.68 0.6 -1.12 1.8 -1.12 3.4 l0 3.76 l5.2 0 l0 2.52 l-5.2 0 l0 17.36 l-2.88 0 l0 -17.36 l-3.84 0 l0 -2.52 l3.84 0 l0 -3.68 c0 -2.24 0.56 -3.92 1.64 -5.12 c1.12 -1.16 2.6 -1.72 4.44 -1.72 c0.76 0 1.48 0.12 2.16 0.36 l0 2.44 c-0.48 -0.16 -1.2 -0.24 -2.04 -0.24 z M123.88 40.36 c-1.84 0 -3.6 -0.48 -5.16 -1.36 c-1.56 -0.92 -2.8 -2.16 -3.68 -3.72 c-0.92 -1.56 -1.36 -3.28 -1.36 -5.16 c0 -2.92 0.96 -5.4 2.96 -7.36 c1.96 -2 4.4 -3 7.32 -3 c5.64 -0.12 10.36 4.64 10.28 10.24 c0.08 5.76 -4.64 10.48 -10.36 10.36 z M123.96 37.76 c2.08 0 3.84 -0.76 5.24 -2.24 c1.36 -1.48 2.04 -3.28 2.04 -5.4 s-0.68 -3.96 -2.08 -5.52 c-1.4 -1.52 -3.12 -2.28 -5.28 -2.28 c-2.08 0 -3.84 0.76 -5.2 2.24 s-2.04 3.28 -2.04 5.44 c-0.08 4.12 3.08 7.84 7.32 7.76 z M139.32 20.12 l2.84 0 l0 3.92 c0.96 -1.96 2.56 -3.28 4.08 -3.84 c0.76 -0.28 1.56 -0.4 2.36 -0.4 c0.44 0 0.76 0 0.96 0.08 l0 3.08 c-0.32 -0.08 -0.72 -0.08 -1.12 -0.08 c-4.72 0 -6.2 3.88 -6.2 7.4 l0 9.72 l-2.92 0 l0 -19.88 z M155 29.96 c0 2.8 1.16 5.24 3.36 6.68 c1.12 0.76 2.4 1.12 3.84 1.12 c1.68 0 3.16 -0.56 4.08 -1.24 c0.44 -0.32 0.84 -0.72 1.24 -1.2 c0.72 -0.96 1.04 -1.6 1.32 -2.32 l2.68 0.88 c-0.44 1.56 -1.52 3.08 -3.04 4.32 c-1.52 1.28 -3.84 2.16 -6.32 2.16 c-5.68 0.08 -10.2 -4.36 -10.12 -10.24 c0 -1.96 0.48 -3.72 1.4 -5.32 s2.16 -2.84 3.72 -3.72 s3.24 -1.32 5.12 -1.32 c2.24 0 4.24 0.64 5.92 1.84 c1.72 1.28 2.8 2.76 3.2 4.52 l-2.64 0.88 c-0.44 -1.6 -2.48 -4.64 -6.56 -4.64 c-2.08 0 -3.8 0.72 -5.16 2.2 s-2.04 3.28 -2.04 5.4 z M193.92 30.96 l-16.08 0 c0.12 1.96 0.84 3.56 2.2 4.84 c1.36 1.32 3 1.96 4.92 1.96 c3 0 5.24 -1.48 6.16 -4.24 l2.56 0.8 c-0.56 1.88 -1.64 3.36 -3.24 4.44 c-1.6 1.04 -3.4 1.6 -5.44 1.6 c-1.88 0 -3.6 -0.48 -5.16 -1.4 s-2.76 -2.16 -3.6 -3.76 c-0.88 -1.56 -1.32 -3.28 -1.32 -5.16 c0 -1.8 0.4 -3.48 1.24 -5.04 c0.8 -1.6 1.96 -2.84 3.48 -3.8 c1.48 -0.96 3.16 -1.44 4.96 -1.44 c1.96 0 3.68 0.44 5.12 1.36 c1.44 0.88 2.52 2.12 3.2 3.64 c0.72 1.52 1.04 3.24 1.04 5.24 c0 0.2 0 0.52 -0.04 0.96 z M177.88 28.48 l13.16 0 c-0.2 -1.84 -0.88 -3.32 -2 -4.48 c-1.12 -1.12 -2.6 -1.68 -4.44 -1.68 c-1.72 0 -3.16 0.6 -4.44 1.8 c-1.28 1.24 -2.04 2.68 -2.28 4.36 z M212.07999999999998 34.36 c0 1.76 -0.68 3.2 -2.04 4.28 c-1.36 1.12 -3.04 1.68 -5 1.68 c-3.2 0 -5.28 -1.32 -6.36 -2.88 c-0.8 -1.08 -1.08 -2.04 -1.2 -3.04 l2.64 -0.68 c0.32 1.84 1.72 4.08 4.88 4.08 c1.12 0 2.08 -0.32 2.92 -0.92 c0.8 -0.56 1.2 -1.36 1.2 -2.36 c0 -0.8 -0.32 -1.44 -0.96 -1.92 c-0.64 -0.52 -1.4 -0.84 -2.28 -1.04 l-3.04 -0.68 c-3.28 -0.72 -4.96 -2.48 -4.96 -5.2 c0 -2.04 1.04 -3.72 2.48 -4.6 c1.4 -0.88 2.92 -1.32 4.28 -1.32 c3 0.04 4.92 1.2 5.96 2.64 c0.72 1 1.04 1.84 1.2 2.68 l-2.64 0.76 c-0.2 -0.8 -0.52 -1.44 -1.16 -2.24 c-0.68 -0.8 -1.88 -1.28 -3.36 -1.28 c-1.08 0 -1.96 0.28 -2.72 0.92 c-0.76 0.6 -1.12 1.36 -1.12 2.24 c0 1.56 1.12 2.28 2.88 2.72 l3.2 0.72 c2.6 0.6 5.2 2.24 5.2 5.44 z"
-                  ></path>
+                <g>
+                  <polygon
+                    fill="#3FC1C9"
+                    points="2.544,1.708 1.947,2.242 2.242,2.571 2.717,2.148 2.923,2.145 3.426,2.79 2.649,3.547     1.784,3.547 0.985,2.499 0.985,3.23 1.565,3.991 2.83,3.991 4.014,2.833 4.014,2.824 3.137,1.697   "
+                  ></polygon>
                 </g>
-              </svg>
-            </a>
-
-            <ul class="social-list" role="list" aria-label="Social links">
-              <li>
-                <a aria-label="facebook" href="#">
-                  <svg class="social-icon" src='/static/social-icons.svg'>
-                  </svg
-                ></a>
-              </li>
-              <li>
-                <a aria-label="youtube" href="#">
-                  <svg class="social-icon">
-                    <use
-                      xlink:href="images/social-icons.svg#icon-youtube"
-                    ></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a aria-label="twitter" href="#">
-                  <svg class="social-icon">
-                    <use
-                      xlink:href="images/social-icons.svg#icon-twitter"
-                    ></use>
-                  </svg>
-                </a>
-              </li>
-              <li>
-                <a aria-label="instragram" href="#">
-                  <svg class="social-icon">
-                    <use
-                      xlink:href="images/social-icons.svg#icon-instagram"
-                    ></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="primary-footer-nav">
-            <nav class="footer-nav">
-              <ul
-                class="flow"
-                style="--flow-spacer: 1em"
-                aria-label="Footer"
-                role="list"
-              >
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Explore</a></li>
-                <li><a href="#">Problemset</a></li>
-                <li><a href="#">Forum</a></li>
-                <li><a href="#">Compete</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Community</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="primary-footer-form">
-            <form action="">
-              <input type="email" />
-              <button class="button" data-shadow="none">Go</button>
-            </form>
-            <p>Copyright 2020. All Rights Reserved</p>
-          </div>
+              </g>
+            </g>
+          </svg>
+        </div>
+        <a class="normal-case text-xl">cryptforces</a>
+      </div>
+      <div class="md:place-self-center md:justify-self-end">
+        <div class="grid grid-flow-col gap-4">
+          <a
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="fill-current"
+            >
+              <path
+                d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"
+              ></path></svg
+          ></a>
+          <a
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="fill-current"
+            >
+              <path
+                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+              ></path></svg
+          ></a>
+          <a
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              class="fill-current"
+            >
+              <path
+                d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+              ></path></svg
+          ></a>
         </div>
       </div>
     </footer>
