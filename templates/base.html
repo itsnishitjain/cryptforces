@@ -126,37 +126,39 @@
           </ul>
         </div>
 
-        <div class="w-10">
-          <svg
-            width="200"
-            height="50"
-            viewBox="0 0 370.1851851851852 63.80911108803392"
-          >
-            <defs id="SvgjsDefs2365"></defs>
-            <g
-              id="SvgjsG2366"
-              featurekey="symbolFeature-0"
-              transform="matrix(21.398091441995412,0,0,21.398091441995412,-21.077120376467633,-21.590673060971568)"
-              fill="#3FC1C9"
+        <a href="/">
+          <div class="w-10">
+            <svg
+              width="200"
+              height="50"
+              viewBox="0 0 370.1851851851852 63.80911108803392"
             >
-              <g xmlns="http://www.w3.org/2000/svg">
-                <g>
-                  <polygon
-                    fill="#3FC1C9"
-                    points="2.179,1.009 0.989,2.171 1.872,3.302 2.465,3.292 3.062,2.759 2.767,2.428 2.292,2.852     2.085,2.856 1.583,2.211 2.358,1.453 3.225,1.453 4.014,2.49 4.014,1.759 3.443,1.009   "
-                  ></polygon>
-                </g>
-                <g>
-                  <polygon
-                    fill="#3FC1C9"
-                    points="2.544,1.708 1.947,2.242 2.242,2.571 2.717,2.148 2.923,2.145 3.426,2.79 2.649,3.547     1.784,3.547 0.985,2.499 0.985,3.23 1.565,3.991 2.83,3.991 4.014,2.833 4.014,2.824 3.137,1.697   "
-                  ></polygon>
+              <defs id="SvgjsDefs2365"></defs>
+              <g
+                id="SvgjsG2366"
+                featurekey="symbolFeature-0"
+                transform="matrix(21.398091441995412,0,0,21.398091441995412,-21.077120376467633,-21.590673060971568)"
+                fill="#3FC1C9"
+              >
+                <g xmlns="http://www.w3.org/2000/svg">
+                  <g>
+                    <polygon
+                      fill="#3FC1C9"
+                      points="2.179,1.009 0.989,2.171 1.872,3.302 2.465,3.292 3.062,2.759 2.767,2.428 2.292,2.852     2.085,2.856 1.583,2.211 2.358,1.453 3.225,1.453 4.014,2.49 4.014,1.759 3.443,1.009   "
+                    ></polygon>
+                  </g>
+                  <g>
+                    <polygon
+                      fill="#3FC1C9"
+                      points="2.544,1.708 1.947,2.242 2.242,2.571 2.717,2.148 2.923,2.145 3.426,2.79 2.649,3.547     1.784,3.547 0.985,2.499 0.985,3.23 1.565,3.991 2.83,3.991 4.014,2.833 4.014,2.824 3.137,1.697   "
+                    ></polygon>
+                  </g>
                 </g>
               </g>
-            </g>
-          </svg>
-        </div>
-        <a class="normal-case text-xl">cryptforces</a>
+            </svg>
+          </div>
+          <a class="normal-case text-xl" href="/">cryptforces</a>
+        </a>
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
@@ -167,26 +169,31 @@
         </ul>
       </div>
       <div class="navbar-end">
+        {% if user.is_authenticated %}
         <div class="dropdown dropdown-end">
           <label tabindex="0" class="btn btn-ghost btn-circle avatar">
             <div class="w-10 rounded-full">
-              <img src="https://source.boringavatars.com/beam/60/nishit" />
+              <img src="https://source.boringavatars.com/beam/60/{{user.username}}" />
             </div>
           </label>
           <ul
             tabindex="0"
-            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-l w-52 shadow-black"
           >
             <li>
-              <a class="justify-between">
+              <a class="justify-between" href="/profile">
                 Profile
                 <span class="badge">New</span>
               </a>
             </li>
-            <li><a>Settings</a></li>
-            <li><a>Logout</a></li>
+            <li><a href="/accounts/logout">Logout</a></li>
           </ul>
         </div>
+        {% else %}
+        <a href="/accounts/login/" class="btn btn-primary mx-5">Login</a>
+        <a href="/accounts/signup/" class="btn btn-primary mx-5">Register</a>
+        {% endif %}
+
       </div>
     </div>
 
