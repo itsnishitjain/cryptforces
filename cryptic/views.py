@@ -11,8 +11,8 @@ def problem(request, problem_id):
         answer = request.POST['answer']
         if problem.answer == answer:
             user = request.user
-            user.points += problem.points
             if problem not in user.question_solved.all():
+                user.points += problem.points
                 user.question_solved.add(problem)
             user.save()
             return render(request, 'problem.html', {'problem': problem, 'toast': "Correct"})

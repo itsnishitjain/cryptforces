@@ -23,14 +23,18 @@
 
   <a href="{% url 'problem' i.id %}">
     <div
-      class="card w-100 h-52 bg-base-100 shadow-xl shadow-black/60 border-white-200"
+      class="card w-100 h-52 bg-base-200 shadow-xl shadow-black/60 border-white-200"
     >
       <div class="card-body">
         <h2 class="card-title">{{i.name}}</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        {% comment %} <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> {% endcomment %}
+        <div class="class-actions justify-start">
+          <div class="badge badge-outline">{{i.difficulty}}</div>
+        </div>
         <div class="card-actions justify-end">
-          <div class="badge badge-outline">Easy</div>
-          <div class="badge badge-outline">Steganography</div>
+          {% for j in i.tags.all %}
+          <div class="badge badge-outline">{{j.name}}</div>
+          {% endfor %}
         </div>
       </div>
     </div>
