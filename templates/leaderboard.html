@@ -1,16 +1,111 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 
-<table class="table table-striped table-bordered table-hover">
-    <tr>
-<th class="text-center">User</th>
-<th class="text-center">Points</th>\
-    </tr>
-{% for i in user_list %}
-    <tr>
-        <td class="text-center">{{ i.username }}</td>
-        <td class="text-center">{{ i.points }}</td>
-    </tr>
-{% endfor %}
+<!-- <table class="table table-striped table-bordered table-hover">
+  <tr>
+    <th class="text-center">User</th>
+    <th class="text-center">Points</th>
+  </tr>
+  {% for i in user_list %}
+  <tr>
+    <td class="text-center">{{ i.username }}</td>
+    <td class="text-center">{{ i.points }}</td>
+  </tr>
+  {% endfor %}
+</table> -->
 
-</table>
+<div class="hero py-20 bg-base-100">
+  <div class="hero-content text-center">
+    <div class="max-w-md">
+      <h1 class="text-5xl font-bold">Leaderboard</h1>
+    </div>
+  </div>
+</div>
+
+<div class="flex justify-center items-center pb-14">
+  <table class="table w-1/2">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>User</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+
+    {% for i in user_list %}
+    <tbody>
+      <tr>
+        <th>1</th>
+        <td>
+          <div class="flex items-center space-x-3">
+            <div class="avatar">
+              <div class="mask mask-squircle w-12 h-12">
+                <img
+                  src="https://source.boringavatars.com/beam/60/{{user.username}}"
+                  alt="Avatar Tailwind CSS Component"
+                />
+              </div>
+            </div>
+            <div>
+              <div class="font-bold">{{ i.username }}</div>
+              <div class="text-sm opacity-50">United States</div>
+            </div>
+          </div>
+        </td>
+        <td>{{ i.points }}</td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+</div>
+
+<!-- <div class="overflow-x-auto w-full">
+  <table class="table w-full">
+    <thead>
+      <tr>
+        <th>
+          <label>
+            <input type="checkbox" class="checkbox" />
+          </label>
+        </th>
+        <th>Rank</th>
+        <th>User</th>
+        <th>Score</th>
+      </tr>
+    </thead>
+
+    {% for i in user_list %}
+    <tbody>
+      <tr>
+        <th>
+          <label>
+            <input type="checkbox" class="checkbox" />
+          </label>
+        </th>
+        <th>1</th>
+        <td>
+          <div class="flex items-center space-x-3">
+            <div class="avatar">
+              <div class="mask mask-squircle w-12 h-12">
+                <img
+                  src="/tailwind-css-component-profile-2@56w.png"
+                  alt="Avatar Tailwind CSS Component"
+                />
+              </div>
+            </div>
+            <div>
+              <div class="font-bold">{{ i.username }}</div>
+              <div class="text-sm opacity-50">United States</div>
+            </div>
+          </div>
+        </td>
+        <td>{{ i.points }}</td>
+        <th>
+          <button class="btn btn-ghost btn-xs">details</button>
+        </th>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+</div> -->
+
 {% endblock content %}

@@ -34,7 +34,10 @@
     </script>
   </head>
 
-  <body style="font-family: 'Be Vietnam Pro', sans-serif">
+  <body
+    style="font-family: 'Be Vietnam Pro', sans-serif"
+    class="flex flex-col min-h-screen"
+  >
     <!-- <header>
       <div>
         <div>
@@ -173,7 +176,9 @@
         <div class="dropdown dropdown-end">
           <label tabindex="0" class="btn btn-ghost btn-circle avatar">
             <div class="w-10 rounded-full">
-              <img src="https://source.boringavatars.com/beam/60/{{user.username}}" />
+              <img
+                src="https://source.boringavatars.com/beam/60/{{user.username}}"
+              />
             </div>
           </label>
           <ul
@@ -193,13 +198,12 @@
         <a href="/accounts/login/" class="btn btn-primary mx-5">Login</a>
         <a href="/accounts/signup/" class="btn btn-primary mx-5">Register</a>
         {% endif %}
-
       </div>
     </div>
 
     {% block content %}{% endblock %}
 
-    <footer class="footer p-10 bg-base-200 text-base-content">
+    <footer class="footer p-10 bg-base-200 text-base-content mt-auto">
       <div>
         <span class="footer-title">Services</span>
         <a class="link link-hover">Branding</a>
