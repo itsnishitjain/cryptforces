@@ -33,15 +33,8 @@
   <div class="hero bg-base-100">
     <div class="hero-content">
       <div class="max-w-full text-center">
-        <div class="flex flex row">
-          <h1 class="text-7xl font-bold">{{problem.name}}</h1>
-          <a href="{{problem.event_url}}"
-            ><p class="text-gray-500 text-xl pl-6 pt-6">
-              ~{{problem.event_name}}
-            </p></a
-          >
-        </div>
-        <p class="text-3xl pt-14 pb-10 text-left">{{problem.question_text}}</p>
+        <h1 class="text-7xl font-bold">{{problem.name}}</h1>
+        <p class="text-3xl pt-14 pb-10">{{problem.question_text}}</p>
         <form method="POST">
           {% csrf_token %}
           <div class="input-group">
@@ -123,6 +116,17 @@
             {% for j in problem.tags.all %}
             <div class="stat-value">{{j.name}}</div>
             {% endfor %}
+          </div>
+          <div class="stat">
+            <div class="stat-title">Event URL</div>
+            <div class="flex flex-row">
+              <div class="stat-value">{{problem.event_name}}</div>
+              <a href="{{problem.event_url}}"
+                ><i
+                  class="fa-solid fa-arrow-up-right-from-square text-3xl px-3"
+                ></i
+              ></a>
+            </div>
           </div>
         </div>
       </div>
