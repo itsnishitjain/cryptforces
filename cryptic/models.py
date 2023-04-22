@@ -11,7 +11,8 @@ class Tag(models.Model):
 class Question(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=200)
-    question_text = models.CharField(max_length=200)
+    question_text = models.TextField()
+    # question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
     answer = models.CharField(max_length=200)
     img_url = models.URLField(blank=True, null=True)
