@@ -28,15 +28,21 @@
       <div class="card-body">
         <h2 class="card-title">{{i.name}}</h2>
         {% if i.from_event %}
-          <p class="text-xs italic">~{{i.event_name}}</p>
+        <p class="text-xs italic">~{{i.event_name}}</p>
         {% else %}
         <p class="text-xs italic">~cryptforces</p>
         {% endif %}
         <h3>Points: {{i.points}}</h3>
-        {% comment %} <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p> {% endcomment %}
+        {% comment %}
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        {% endcomment %}
 
         <div class="card-actions justify-end">
-          <div class="badge {% if i.difficulty == 'Easy' %}badge-success{% elif i.difficulty == 'Medium' %}badge-warning{% else %}badge-error{% endif %}">{{i.difficulty}}</div>
+          <div
+            class="badge {% if i.difficulty == 'Easy' %}badge-success{% elif i.difficulty == 'Medium' %}badge-warning{% else %}badge-error{% endif %}"
+          >
+            {{i.difficulty}}
+          </div>
           {% for j in i.tags.all %}
           <div class="badge badge-outline">{{j.name}}</div>
           {% endfor %}
