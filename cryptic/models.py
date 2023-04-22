@@ -16,7 +16,7 @@ class Question(models.Model):
     answer = models.CharField(max_length=200)
     img_url = models.URLField(blank=True, null=True)
     points = models.IntegerField(default=0)
-    difficulty = models.IntegerField(default=0)
+    difficulty = models.CharField(max_length=200, default="Easy", choices=(("Easy", "Easy"), ("Medium", "Medium"), ("Hard", "Hard")))
     category = models.CharField(max_length=200, default="General")
     tags = models.ManyToManyField(Tag, blank=True)
     from_event = models.BooleanField(default=False)
