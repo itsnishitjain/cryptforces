@@ -1,0 +1,23 @@
+{
+  "name": "cryptforces",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss build src/styles.css -o static/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishitjain1726/cryptforces.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nishitjain1726/cryptforces/issues"
+  },
+  "homepage": "https://github.com/nishitjain1726/cryptforces#readme",
+  "dependencies": {
+    "tailwindcss": "^3.3.1"
+  }
+}

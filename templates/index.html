@@ -1,7 +1,7 @@
 {% extends "base.html" %} {% block content %} {% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'main.css' %}" />
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}" />
 <main>
-  <section class="padding-block-900">
+  <!-- <section class="padding-block-900">
     <div class="container">
       <div class="even-columns">
         <div class="flow">
@@ -20,72 +20,23 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
 
-  <section class="padding-block-900">
-    <div class="container">
-      <div class="even-columns">
-        <div
-          class="flow text-center-sm-only margi"
-          style="--flow-spacer: 1.5rem"
-        >
-          <h2 class="fs-secondary-heading fw-bold">
-            What do we provide at cryptforces?
-          </h2>
-          <p>
-            At cryptforces, we provide a platform for individuals to learn
-            cryptic hunting with various practice questions in problemset and
-            learning resources. We also help organisations to host their own
-            events with customisation.
-          </p>
-        </div>
-        <div>
-          <ul class="numbered-items | flow" role="list">
-            <li>
-              <div class="flow" style="--flow-spacer: 1em; z-index: -1">
-                <h3 class="numbered-items__title | fs-600 fw-bold">
-                  Cryptic hunting resources
-                </h3>
-                <p class="numbered-items__body" data-width="wide">
-                  At cryptforces, we provide a variety of resources to help
-                  individuals learn and master the art of cryptic hunting. This
-                  includes guides on how to decipher codes and clues, tips on
-                  how to solve puzzles, and practice puzzles to help you hone
-                  your skills.
-                </p>
-              </div>
-            </li>
-            <li>
-              <div class="flow" style="--flow-spacer: 1em; z-index: -1">
-                <h3 class="numbered-items__title | fs-600 fw-bold">
-                  Organise and host your own hunts
-                </h3>
-                <p class="numbered-items__body" data-width="wide">
-                  Our platform allows organisations to host their own hunts with
-                  complete customisation so that they dont need to worry about
-                  coding their own platform and enhance their community in an
-                  easy way.
-                </p>
-              </div>
-            </li>
-            <li>
-              <div class="flow" style="--flow-spacer: 1em; z-index: -1">
-                <h3 class="numbered-items__title | fs-600 fw-bold">
-                  Discuss in Forums
-                </h3>
-                <p class="numbered-items__body" data-width="wide">
-                  Cryptic hunting is not just an individual pursuit; it often
-                  involves working with a team to solve puzzles and decipher
-                  clues. At cryptforces, we encourage collaborative learning by
-                  providing forums and discussion boards where hunters can share
-                  tips, ask questions, and collaborate on puzzles.
-                </p>
-              </div>
-            </li>
-          </ul>
-        </div>
+  <div class="hero min-h-screen bg-base-100">
+    <div class="hero-content flex-col lg:flex-row-reverse">
+      <img src="https://i.imgur.com/JM4so8i.png" class="max-w-xl rounded-lg" />
+      <div>
+        <h1 class="text-5xl font-bold">
+          A platform that helps people learn cryptic hunting.
+        </h1>
+        <p class="py-6">
+          Our platform provides resourcesto to individuals and enables
+          organizations to host their own hunts, which involve deciphering codes
+          and clues to solve puzzle-solving challenges.
+        </p>
+        <button class="btn btn-primary">Get Started</button>
       </div>
     </div>
-  </section>
+  </div>
 </main>
 {% endblock content %}
