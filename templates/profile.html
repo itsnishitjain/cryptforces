@@ -1,8 +1,25 @@
 {% extends "base.html" %} {% block content %} {% load static %}
 
 
-{{user.username}}
+<div class="flex justify-center">
+    <div class="card w-96 bg-base-100 shadow-2xl shadow-black m-10">
+        <figure class="px-10 pt-10">
+          <img src="https://source.boringavatars.com/beam/100/{{user.username}}" alt="Shoes" class="rounded-xl" />
+        </figure>
+        <div class="card-body items-center text-center">
+          <h2 class="card-title">{{user.username}}</h2>
+          <div class="stats shadow-xl shadow-black">
+  
+            <div class="stat">
+              <div class="stat-title">Points</div>
+              <div class="stat-value">{{user.points}}</div>
+              <div class="stat-desc">{{ user.question_solved.all | length }} questions solved</div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+</div>
 
-{{user.points}}
 
 {% endblock content %}
