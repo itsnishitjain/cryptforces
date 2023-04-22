@@ -3,7 +3,7 @@
 *.py[cod]
 *$py.class
 *.pyc
-
+node_modules/
 # C extensions
 *.so
 staticfiles_build/
