@@ -34,67 +34,68 @@
     <div class="hero-content">
       <div class="max-w-full text-center">
         <h1 class="text-7xl font-bold">{{problem.name}}</h1>
-        <p class="text-3xl pt-14 pb-10">{{problem.question_text}}</p>
-        <form method="POST">
-          {% csrf_token %}
-          <div class="input-group">
-            <input
-              class="input input-bordered w-full max-w-xs"
-              placeholder="Answer"
-              type="text"
-              name="answer"
-              id="answer"
-              autocomplete="off"
-            />
-            <input class="btn btn-primary" type="submit" value="Submit" />
-          </div>
-          <center class="pt-10">
-            {% if toast == 'Correct' %}
-            <div id="snackbar">
-              <div class="alert alert-success shadow-lg">
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="stroke-current flex-shrink-0 h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  <span>Correct Answer</span>
+        <p class="text-3xl pt-10 pb-8">{{problem.question_text|linebreaks}}</p>
+        <div class="flex w-full justify-center mt-16">
+          <form method="POST">
+            {% csrf_token %}
+            <div class="input-group">
+              <input
+                class="input input-bordered w-full max-w-xs"
+                placeholder="Answer"
+                type="text"
+                name="answer"
+                id="answer"
+                autocomplete="off"
+              />
+              <input class="btn btn-primary" type="submit" value="Submit" />
+            </div>
+            <center class="pt-10">
+              {% if toast == 'Correct' %}
+              <div id="snackbar">
+                <div class="alert alert-success shadow-lg">
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="stroke-current flex-shrink-0 h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>Correct Answer</span>
+                  </div>
                 </div>
               </div>
-            </div>
-
-            {% elif toast == 'Incorrect' %}
-            <div id="snackbar">
-              <div class="alert alert-error shadow-lg">
-                <div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="stroke-current flex-shrink-0 h-6 w-6"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-                  <span>Incorrect Answer!</span>
+              {% elif toast == 'Incorrect' %}
+              <div id="snackbar">
+                <div class="alert alert-error shadow-lg">
+                  <div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="stroke-current flex-shrink-0 h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                    <span>Incorrect Answer!</span>
+                  </div>
                 </div>
               </div>
-            </div>
-            {% endif %}
-          </center>
-        </form>
+              {% endif %}
+            </center>
+          </form>
+        </div>
       </div>
     </div>
   </div>
