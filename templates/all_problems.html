@@ -24,6 +24,9 @@
     <div
       class="card w-100 h-52 bg-base-200 shadow-xl shadow-black/60 border-white-200"
     >
+      {% if i in user.question_solved.all %}
+      <span class="indicator-item badge badge-success absolute -top-2 -right-4">Completed</span>
+      {% endif %}
       <div class="card-body">
         <h2 class="card-title">{{i.name}}</h2>
         {% if i.from_event %}
