@@ -33,8 +33,8 @@
   <div class="hero bg-base-100">
     <div class="hero-content">
       <div class="max-w-full text-center">
-        <h1 class="text-7xl font-bold">{{problem.name}}</h1>
-        <p class="text-3xl pt-10 pb-8">{{problem.question_text|linebreaks}}</p>
+        <h1 class="text-4xl font-bold mb-8">{{problem.name}}</h1>
+        <span class="text-6xl mt-8">{{problem.question_text|linebreaks}}</span>
         <div class="flex w-full justify-center mt-16">
           <form method="POST">
             {% csrf_token %}
@@ -103,7 +103,7 @@
   <div class="hero bg-base-100">
     <div class="hero-content">
       <div class="max-w-full pb-50">
-        <div class="flex flex-row stats shadow" style="overflow: hidden">
+        <div class="flex flex-row stats shadow bg-base-200" style="overflow: hidden">
           <div class="stat">
             <div class="stat-title">Points</div>
             <div class="stat-value">{{problem.points}}</div>
@@ -119,7 +119,7 @@
             {% endfor %}
           </div>
           <div class="stat">
-            <div class="stat-title">Event URL</div>
+            <div class="stat-title">Event</div>
             <div class="flex flex-row">
               <div class="stat-value">{{problem.event_name}}</div>
               <a href="{{problem.event_url}}"
