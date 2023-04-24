@@ -114,10 +114,15 @@
           </div>
           <div class="stat">
             <div class="stat-title">Tags</div>
+            {% if problem.tags.all|length == 0 %}
+            <div class="stat-value">None</div>
+            {% else %}
             {% for j in problem.tags.all %}
             <div class="stat-value">{{j.name}}</div>
             {% endfor %}
+            {% endif %}
           </div>
+          {% if i.from_event %}
           <div class="stat">
             <div class="stat-title">Event</div>
             <div class="flex flex-row">
@@ -129,6 +134,7 @@
               ></a>
             </div>
           </div>
+          {% endif %}
         </div>
       </div>
     </div>
