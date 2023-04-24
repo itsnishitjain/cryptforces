@@ -25,7 +25,7 @@ class Question(models.Model):
     event_url = models.URLField(blank=True, null=True)
 
     def __str__(self):
-        return self.question_text
+        return self.name
     
 class Additional_Hints(models.Model):
     question = models.ForeignKey(Question, on_delete=models.CASCADE)
